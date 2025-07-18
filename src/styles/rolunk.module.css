@@ -8,7 +8,7 @@
 
 .edina {
   position: absolute;
-  bottom: -6.5rem;
+  bottom: 1rem;
   left: 7rem;
   z-index: -1;
 }
@@ -27,4 +27,8 @@ p {
 
 .rolunkcim {
   margin-right: 1rem;
+}
+
+h2 {
+  text-align: right;
 }
