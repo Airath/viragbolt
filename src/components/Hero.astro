@@ -1,0 +1,30 @@
+---
+import "../styles/hero.css";
+import { Image } from "astro:assets";
+import Logo from "../assets/Logo-felirat.svg";
+import virag from "../assets/virag-group.png";
+---
+
+<div class="nav">
+  <nav class="menu">
+    <div class="left">
+      <a href="#kezdolap">Kezdőlap</a>
+      <a href="#rolunk">Rólunk</a>
+    </div>
+    <div class="logo-wrapper">
+      <Image loading={"eager"} src={Logo} alt="Fleur virágüzlet felirat." />
+    </div>
+    <div class="right">
+      <a href="#galleria">Galléria</a>
+      <a href="#elerhetoseg">Elérhetőség</a>
+    </div>
+  </nav>
+  <div class="masked-image">
+    <Image
+      loading={"eager"}
+      src={virag}
+      alt="Nagy virágos kép a hero szekcióban."
+      class="viragoskep"
+    />
+  </div>
+</div>

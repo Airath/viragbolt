@@ -1,0 +1,28 @@
+.content-kezdolap {
+  display: flex;
+  gap: 7px;
+}
+
+.udvszoveg {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.udvszoveg .item:nth-last-child(1) {
+  margin-top: 119px; /* csak akkor, ha gap is van */
+}
+
+.hivoszoveg {
+  text-align: center;
+  font-weight: 400;
+  font-size: 28px;
+  color: #e0b979;
+}
+
+.paragrafus {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+}

@@ -1,0 +1,24 @@
+---
+import "../styles/kezdolap.css";
+import { Image } from "astro:assets";
+import group from "../assets/kezdo-kep.png";
+---
+
+<section id="kezdolap">
+  <div class="content-kezdolap">
+    <Image loading={"eager"} src={group} alt="Fleur virágüzlet felirat." />
+    <div class="udvszoveg">
+      <h1 class="item">Üdvözöllek!</h1>
+      <p class="item paragrafus">
+        Szenvedélyünk a természet szépsége és az apró örömök, amelyeket<br /> egy-egy
+        csokor virág hozhat a mindennapokba.<br /> Üzletünkben különleges, gondosan
+        válogatott kompozíciókkal<br /> várunk, legyen szó ajándékról, alkalomról
+        vagy csak egy kis színről<br /> az otthonodba. Hisszük, hogy minden virág
+        egy történetet mesél el<br /> – engedd, hogy a tiéd is kivirágozzon nálunk!
+      </p>
+      <h2 class="item hivoszoveg">
+        Nézz körül, inspirálódj és találd meg<br /> a hozzád illő virágcsodát!
+      </h2>
+    </div>
+  </div>
+</section>

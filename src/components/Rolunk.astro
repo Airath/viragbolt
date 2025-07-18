@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import styles from "../styles/rolunk.module.css";
+import flora from "../assets/flora.png";
+import edina from "../assets/edina.png";
+import bg from "../assets/rolunkBG.png";
+---
+
+<section id="rolunk" style={`background-image: url(${bg.src})`} class="rolunk">
+  <div class={styles.content}>
+    <div class={styles.rolunkszoveg}>
+      <h1 class={styles.rolunkcim}>Rólunk...</h1>
+      <p>
+        A Fleurs egy álomból született – egy apró kávézó sarkában papírra vetett<br
+        />
+        virágosbolt-ötletből, amit sok évvel később valóra váltottunk.
+      </p>
+      <p>
+        Családi vállalkozásként működünk, és minden egyes csokrot ugyanazzal a<br
+        />
+        szeretettel készítünk, ahogy az elsőt.
+      </p>
+      <p>
+        Számunkra a virág nem csupán dekoráció, hanem érzések, emlékek és
+        pillanatok<br /> kifejezője. Szeretnénk, ha nálunk mindenki megtalálná azt
+        a kompozíciót, ami<br /> szívéhez a legközelebb áll.<br /> A virágokkal mesélünk
+        – és örömmel segítünk elmondani a ti történeteteket is.
+      </p>
+      <h2>Flóra és Edina</h2>
+    </div>
+    <div class={styles.rolunkkepek}>
+      <Image loading={"lazy"} src={flora} alt="Flóra fotója." />
+      <Image
+        class={styles.edina}
+        loading={"lazy"}
+        src={edina}
+        alt="Edina fotója."
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .rolunk {
+    background-image: url(${bg.src});
+    background-size: 100%; /* vagy cover / 100% 100% stb. */
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem;
+    z-index: -2;
+  }
+</style>

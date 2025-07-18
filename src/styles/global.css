@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Yeseva One, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  box-sizing: inherit;
+  background-color: #323233;
+  width: 1360px;
+  margin: 0 auto;
+  color: #d7d7d7;
+}
+
+.menu-item {
+  color: rebeccapurple;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
+}
