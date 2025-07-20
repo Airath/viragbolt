@@ -1,16 +1,59 @@
 ---
-
+import "../styles/elerhetoseg.css";
+import { Image } from "astro:assets";
+import email from "../assets/emaiIcon.svg";
+import telicon from "../assets/telIcon.svg";
+import lokacio from "../assets/lokacio.svg";
+import bg from "../assets/contactBG.png";
 ---
 
-<section id="elerhetoseg">
-  <h1>Elérhetőség</h1>
-  <div>
-    <p>fleursviragok@gmail.hu</p>
-    <p>+36 30 5555 XXX</p>
-    <p>+36 20 5555 XXX</p>
-    <p>Cegléd</p>
-    <p>Rákóczi Ferenc utca</p>
-    <p>138/B</p>
+<section id="elerhetoseg" style={`background-image: url(${bg.src})`}>
+  <h1 class="contactcim">Elérhetőség</h1>
+  <div class="elerhetoseg-content">
+    <div class="elerCard">
+      <div class="email">
+        <Image loading={"lazy"} src={email} alt="Fleur virágüzlet felirat." /><p
+        >
+          fleursviragok@gmail.hu
+        </p>
+      </div>
+      <div class="tel">
+        <Image loading={"lazy"} src={telicon} alt="Fleur virágüzlet felirat." />
+        <div>
+          <p>+36 30 5555 XXX</p>
+          <p>+36 20 5555 XXX</p>
+        </div>
+      </div>
+      <div class="lokacio">
+        <Image loading={"lazy"} src={lokacio} alt="Fleur virágüzlet felirat." />
+        <div>
+          <p>Cegléd</p>
+          <p>Rákóczi Ferenc utca</p>
+          <p>138/B</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86743.0059100975!2d19.721811350611247!3d47.202513543536654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474170f3f82c3f27%3A0xa1db3b9918ea12e7!2zQ2VnbMOpZA!5e0!3m2!1shu!2shu!4v1752991298579!5m2!1shu!2shu"
+        width="600"
+        height="450"
+        class="terkep"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </div>
-  <div></div>
 </section>
+
+<style>
+  #elerhetoseg {
+    background-image: url(${bg.src});
+    background-size: cover; /* vagy cover / 100% 100% stb. */
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15rem;
+    z-index: -2;
+    width: 100vw;
+  }
+</style>

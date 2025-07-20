@@ -13,6 +13,11 @@
   margin-top: 51px;
 }
 
+.menu a:hover {
+  color: #acacac;
+  transition: all 0.2s ease-in;
+}
+
 .menu a {
   text-decoration: none;
   color: #d7d7d7;
@@ -53,4 +58,15 @@
   mask-mode: match-source;
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
+}
+
+.herokep {
+  position: relative;
+}
+
+.viraglogo {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
 }

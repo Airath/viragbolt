@@ -1,0 +1,13 @@
+.swiper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}

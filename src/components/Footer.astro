@@ -1,0 +1,48 @@
+---
+import "../styles/footer.css";
+import { Image } from "astro:assets";
+import logo from "../assets/fleurLogoval.svg";
+import insta from "../assets/insta.svg";
+import fb from "../assets/facebook.svg";
+import tiktok from "../assets/tiktok.svg";
+---
+
+<section>
+  <div class="fullfooter">
+    <div class="footer">
+      <div class="nyitvatartas">
+        <h3 class="nyitvat">Nyitvatartás</h3>
+        <div class="nytartas">
+          <div>
+            <p>H-P:</p>
+          </div>
+          <div>
+            <p>09:00 - 17:00</p>
+          </div>
+        </div>
+        <div class="nytartas">
+          <p>Sz-V:</p>
+          <p>11:00 - 14:00</p>
+        </div>
+      </div>
+      <div class="social">
+        <h3 class="socialm">Social Media</h3>
+        <div class="socialicons">
+          <Image loading={"lazy"} src={insta} alt="Fleur virágüzlet felirat." />
+          <Image loading={"lazy"} src={fb} alt="Fleur virágüzlet felirat." />
+          <Image
+            loading={"lazy"}
+            src={tiktok}
+            alt="Fleur virágüzlet felirat."
+          />
+        </div>
+        <div class="jog">
+          <p>2025 Minden jog fenntartva!</p>
+          <p>Készítette:</p>
+          <p>Petra és Feri</p>
+        </div>
+      </div>
+      <Image loading={"lazy"} src={logo} alt="Fleur virágüzlet felirat." />
+    </div>
+  </div>
+</section>

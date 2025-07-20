@@ -1,0 +1,186 @@
+<section id="galleria">
+  <div class="slider-wrapper">
+    <!-- Radios (control the slide) -->
+    <input type="radio" name="slider" id="slide1" checked hidden />
+    <input type="radio" name="slider" id="slide2" hidden />
+    <input type="radio" name="slider" id="slide3" hidden />
+    <input type="radio" name="slider" id="slide4" hidden />
+
+    <!-- Slides -->
+    <div class="slider">
+      <div class="slide s1">
+        <img
+          src="/images/cs1.png"
+          srcset="/images/cs1.png 1x, /images/cs1@2x.png 2x"
+          alt="Kép 1"
+          loading="lazy"
+        />
+      </div>
+      <div class="slide s2">
+        <img
+          src="/images/cs2.png"
+          srcset="/images/cs2.png 1x, /images/cs2@2x.png 2x"
+          alt="Kép 2"
+          loading="lazy"
+        />
+      </div>
+      <div class="slide s3">
+        <img
+          src="/images/cs3.png"
+          srcset="/images/cs3.png 1x, /images/cs3@2x.png 2x"
+          alt="Kép 3"
+          loading="lazy"
+        />
+      </div>
+      <div class="slide s4">
+        <img
+          src="/images/cs4.png"
+          srcset="/images/cs4.png 1x, /images/cs4@2x.png 2x"
+          alt="Kép 4"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <!-- Prev buttons -->
+    <label for="slide4" class="arrow prev" id="prev1"></label>
+    <label for="slide1" class="arrow prev" id="prev2"></label>
+    <label for="slide2" class="arrow prev" id="prev3"></label>
+    <label for="slide3" class="arrow prev" id="prev4"></label>
+
+    <!-- Next buttons -->
+    <label for="slide2" class="arrow next" id="next1"></label>
+    <label for="slide3" class="arrow next" id="next2"></label>
+    <label for="slide4" class="arrow next" id="next3"></label>
+    <label for="slide1" class="arrow next" id="next4"></label>
+
+    <!-- Dots -->
+    <div class="dots">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div>
+  </div>
+</section>
+
+<style>
+  .slider-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    width: 400%;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    image-rendering: auto;
+  }
+
+  /* Slide movement based on radio selection */
+  #slide1:checked ~ .slider {
+    transform: translateX(0%);
+  }
+  #slide2:checked ~ .slider {
+    transform: translateX(-100%);
+  }
+  #slide3:checked ~ .slider {
+    transform: translateX(-200%);
+  }
+  #slide4:checked ~ .slider {
+    transform: translateX(-300%);
+  }
+
+  /* Arrows */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    mask-size: cover;
+    background-color: white;
+  }
+
+  .prev::before {
+    mask-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6"/></svg>');
+  }
+
+  .next::before {
+    mask-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18"/></svg>');
+  }
+
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+
+  /* Only show arrows for active slide */
+  #slide1:checked ~ #prev1,
+  #slide2:checked ~ #prev2,
+  #slide3:checked ~ #prev3,
+  #slide4:checked ~ #prev4,
+  #slide1:checked ~ #next1,
+  #slide2:checked ~ #next2,
+  #slide3:checked ~ #next3,
+  #slide4:checked ~ #next4 {
+    display: flex;
+  }
+
+  /* Dots */
+  .dots {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .dots label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  /* Active dot sárgás szín */
+  #slide1:checked ~ .dots label:nth-child(1),
+  #slide2:checked ~ .dots label:nth-child(2),
+  #slide3:checked ~ .dots label:nth-child(3),
+  #slide4:checked ~ .dots label:nth-child(4) {
+    background: #e0b979;
+  }
+</style>

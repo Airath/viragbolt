@@ -1,0 +1,32 @@
+.elerhetoseg-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 220px;
+}
+
+.elerhetoseg-content p {
+  font-size: 36px;
+}
+
+.elerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 91px;
+}
+
+.email,
+.tel,
+.lokacio {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.terkep {
+  border: 6px solid #e0b979;
+}
+
+.contactcim {
+  margin-bottom: 75px;
+}

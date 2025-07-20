@@ -3,6 +3,7 @@ import "../styles/hero.css";
 import { Image } from "astro:assets";
 import Logo from "../assets/Logo-felirat.svg";
 import virag from "../assets/virag-group.png";
+import viraglogo from "../assets/virag-logo.svg";
 ---
 
 <div class="nav">
@@ -19,12 +20,20 @@ import virag from "../assets/virag-group.png";
       <a href="#elerhetoseg">Elérhetőség</a>
     </div>
   </nav>
-  <div class="masked-image">
+  <div class="herokep">
+    <div class="masked-image">
+      <Image
+        loading={"eager"}
+        src={virag}
+        alt="Nagy virágos kép a hero szekcióban."
+        class="viragoskep"
+      />
+    </div>
     <Image
       loading={"eager"}
-      src={virag}
+      src={viraglogo}
       alt="Nagy virágos kép a hero szekcióban."
-      class="viragoskep"
+      class="viraglogo"
     />
   </div>
 </div>
