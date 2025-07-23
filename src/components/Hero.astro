@@ -38,4 +38,15 @@ import viraglogo from "../assets/virag-logo.svg";
   </div>
 </div>
 
-<script type="module" src="/src/script/animation.js"></script>
+<script type="module">
+  import gsap from "https://cdn.skypack.dev/gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const image = document.querySelector(".viraglogo");
+    if (image) {
+      image.addEventListener("mouseenter", () => {
+        gsap.fromTo(image, { rotation: 0 }, { rotation: 360, duration: 1 });
+      });
+    }
+  });
+</script>
