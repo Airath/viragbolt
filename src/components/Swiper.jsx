@@ -1,24 +1,31 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import React from 'react'
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
+import slide1 from '../assets/k1.png'
+import slide2 from '../assets/k1.png'
+import slide3 from '../assets/k1.png'
 
-import "swiper/css";
-import "swiper/css/navigation";
+export default function MySlider() {
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    rtl: true,
+    slides: {
+      perView: 3,
+      spacing: 10,
+    },
+  })
 
-export default function NavigationSlider() {
   return (
-    <Swiper
-      modules={[Navigation]}
-      navigation
-      spaceBetween={30}
-      slidesPerView={1}
-    >
-      <SwiperSlide>
-        <img src="/images/cs1.png" alt="Kép 1" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="/images/cs2.png" alt="Kép 2" />
-      </SwiperSlide>
-    </Swiper>
-  );
+    <div ref={sliderRef} className="keen-slider">
+      <div className="keen-slider__slide number-slide1">
+        <img src={slide1.src} alt="Csillagos égbolt" />
+      </div>
+      <div className="keen-slider__slide number-slide2">
+        <img src={slide2.src} alt="Galaxis" />
+      </div>
+      <div className="keen-slider__slide number-slide3">
+        <img src={slide3.src} alt="Hold felszíne" />
+      </div>
+    </div>
+  )
 }
-

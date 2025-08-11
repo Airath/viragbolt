@@ -1,35 +1,35 @@
-.content {
+.rolunk-content {
   display: flex;
 }
 
-.rolunkkepek {
+.rolunk-kepek {
   position: relative;
 }
 
-.edina {
+.rolunk-edina {
   position: absolute;
   bottom: -6.5rem;
   left: 6.5rem;
   z-index: 0;
 }
 
-.rolunkszoveg {
+.rolunk-szoveg {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 3.125rem; /* 50px -> 3.125rem */
 }
 
-p {
+.rolunk-p {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px -> 1.25rem */
 }
 
-.rolunkcim {
+.rolunk-cim {
   margin-right: 17rem;
 }
 
-.alairas {
+.rolunk-alairas {
   text-align: right;
   margin-right: 6rem;
 }

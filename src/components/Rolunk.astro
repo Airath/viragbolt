@@ -1,38 +1,37 @@
 ---
 import { Image } from "astro:assets";
-import styles from "../styles/rolunk.module.css";
 import flora from "../assets/flora.png";
 import edina from "../assets/edina.png";
 import bg from "../assets/rolunkBG2.png";
+import "../styles/rolunk.css";
 ---
 
 <section id="rolunk" style={`background-image: url(${bg.src})`} class="rolunk">
-  <div class={styles.content}>
-    <div class={styles.rolunkszoveg}>
-      <h1 class={styles.rolunkcim}>Rólunk...</h1>
-      <p>
+  <div class="rolunk-content">
+    <div class="rolunk-szoveg">
+      <h1 class="rolunk-cim">Rólunk...</h1>
+      <p class="rolunk-p">
         A Fleurs egy álomból született – egy apró kávézó sarkában papírra vetett<br
         />
         virágosbolt-ötletből, amit sok évvel később valóra váltottunk.
       </p>
-      <p>
+      <p class="rolunk-p">
         Családi vállalkozásként működünk, és minden egyes csokrot ugyanazzal a<br
         />
         szeretettel készítünk, ahogy az elsőt.
       </p>
-      <p>
+      <p class="rolunk-p">
         Számunkra a virág nem csupán dekoráció, hanem érzések, emlékek és
         pillanatok<br /> kifejezője. Szeretnénk, ha nálunk mindenki megtalálná azt
         a kompozíciót, ami<br /> szívéhez a legközelebb áll.<br /> A virágokkal mesélünk
         – és örömmel segítünk elmondani a ti történeteteket is.
       </p>
-      <h2 class="alairas">Flóra és Edina</h2>
+      <h2 class="rolunk-alairas">Flóra és Edina</h2>
     </div>
-    <div class={styles.rolunkkepek}>
+    <div class="rolunk-kepek">
       <Image class="kep" loading={"lazy"} src={flora} alt="Flóra fotója." />
       <Image
-        class={styles.edina}
-        ,
+        class="rolunk-edina"
         loading={"lazy"}
         src={edina}
         alt="Edina fotója."

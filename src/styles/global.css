@@ -6,17 +6,19 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px; /* Alapértelmezett, így a rem jól számolható */
 }
 
 body {
   font-family: Yeseva One, sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px -> 1.5rem */
   box-sizing: inherit;
   background-color: #323233;
-  width: 1360px;
+  /* width: 1360px;  -- ezt töröld! */
   margin: 0 auto;
   color: #d7d7d7;
+  max-width: 85rem; /* 1360px -> 85rem */
 }
 
 .menu-item {
@@ -28,11 +30,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 6.25rem; /* 100px -> 6.25rem */
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 3rem; /* 48px -> 3rem */
   font-weight: 400;
   text-align: center;
 }
