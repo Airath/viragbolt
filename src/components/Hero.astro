@@ -1,5 +1,6 @@
 ---
 import "../styles/hero.css";
+import "../styles/hamburgers.css";
 import { Image } from "astro:assets";
 import Logo from "../assets/Logo-felirat.svg";
 import virag from "../assets/virag-group.png";
@@ -8,18 +9,40 @@ import viraglogo from "../assets/virag-logo.svg";
 
 <div class="nav">
   <nav class="menu">
-    <div class="left">
+    <div class="left menu-wrapper">
       <a href="#kezdolap">Kezdőlap</a>
       <a href="#rolunk">Rólunk</a>
     </div>
     <div class="logo-wrapper">
       <Image loading={"eager"} src={Logo} alt="Fleur virágüzlet felirat." />
     </div>
-    <div class="right">
+    <div class="right menu-wrapper">
       <a href="#galleria">Galléria</a>
       <a href="#elerhetoseg">Elérhetőség</a>
     </div>
+    <!-- Hamburger menu for mobile view -->
+    <button
+      class="hamburger hamburger--squeeze"
+      type="button"
+      id="hamburgerBtn"
+      aria-label="Menü megnyitása"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
   </nav>
+
+  <!-- Mobil menü, ami oldalról csúszik be -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#kezdolap">Kezdőlap</a>
+    <a href="#rolunk">Rólunk</a>
+    <a href="#galleria">Galléria</a>
+    <a href="#elerhetoseg">Elérhetőség</a>
+  </div>
+
   <div class="herokep">
     <div class="masked-image">
       <Image
@@ -38,10 +61,85 @@ import viraglogo from "../assets/virag-logo.svg";
   </div>
 </div>
 
+<style>
+  /* Mobil menü alapértelmezett stílusai */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
+    z-index: 1000;
+    transition: right 0.35s cubic-bezier(0.77, 0, 0.18, 1);
+  }
+  .mobile-menu.active {
+    right: 0;
+  }
+  .mobile-menu a {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5rem;
+    color: #222;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0b979;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+  .mobile-menu a:hover {
+    color: #e0b979;
+  }
+
+  @media (max-width: 717px) {
+    .menu-wrapper {
+      display: none;
+    }
+  }
+  @media (max-width: 717px) {
+    .hamburger {
+      display: block;
+    }
+  }
+</style>
+
 <script type="module">
   import gsap from "https://cdn.skypack.dev/gsap";
 
   document.addEventListener("DOMContentLoaded", () => {
+    // Hamburger toggle
+    const hamburger = document.getElementById("hamburgerBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("is-active");
+        mobileMenu.classList.toggle("active");
+        // ARIA állapot frissítése akadálymentességhez
+        hamburger.setAttribute(
+          "aria-expanded",
+          hamburger.classList.contains("is-active") ? "true" : "false"
+        );
+      });
+
+      // Menü linkre kattintva záródjon a menü
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("is-active");
+          mobileMenu.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    // Viraglogo animáció
     const image = document.querySelector(".viraglogo");
     if (image) {
       image.addEventListener("mouseenter", () => {
